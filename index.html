@@ -1495,68 +1495,110 @@ src="https://www.facebook.com/tr?id=2730937257096183&ev=PageView&noscript=1"
                     </div>
                 </div>
             </div>
-            
-            <!-- 按鈕區域 -->
-            <div style="display: flex; flex-direction: column; gap: 20px; justify-content: center; align-items: center;">
-                <button onclick="showDomainModal()" style="
-                    background: linear-gradient(45deg, #FFD700, #FFA500);
-                    color: #000;
-                    border: none;
-                    padding: 16px 50px;
-                    font-size: 1.2rem;
-                    font-weight: bold;
-                    border-radius: 50px;
-                    cursor: pointer;
-                    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
-                    transition: all 0.3s ease;
-                    white-space: nowrap;
-                    animation: pulse-gold 2s infinite;
-                " onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-                    立即註冊
-                </button>
-                <a href="https://t.me/xin_165" target="_blank" style="
-                    background: linear-gradient(45deg, #0088cc, #00a8e8);
-                    color: #fff;
-                    border: none;
-                    padding: 16px 50px;
-                    font-size: 1.2rem;
-                    font-weight: bold;
-                    border-radius: 50px;
-                    text-decoration: none;
-                    display: inline-block;
-                    box-shadow: 0 8px 25px rgba(0, 136, 204, 0.6);
-                    transition: all 0.3s ease;
-                    white-space: nowrap;
-                " onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-                    聊天聯繫代理(万万)
-                </a>
-            </div>
         </section>
 
         <style>
             @keyframes pulse-gold {
-                0%, 100% { box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6); }
-                50% { box-shadow: 0 8px 35px rgba(255, 215, 0, 0.9); }
+                0%, 100% { filter: drop-shadow(0 8px 25px rgba(255, 215, 0, 0.6)); }
+                50% { filter: drop-shadow(0 8px 35px rgba(255, 215, 0, 0.9)); }
+            }
+            
+            /* 金幣爆炸效果樣式 */
+            .gold-coin {
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                animation: coinFly 1.5s ease-out forwards;
+                pointer-events: none;
+                filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.9));
+            }
+            
+            .gold-coin img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+            
+            .gold-particle {
+                position: absolute;
+                width: 8px;
+                height: 8px;
+                background: #FFD700;
+                border-radius: 50%;
+                box-shadow: 0 0 10px rgba(255, 215, 0, 1);
+                animation: particleFly 1s ease-out forwards;
+                pointer-events: none;
+            }
+            
+            @keyframes coinFly {
+                0% {
+                    transform: translate(0, 0) rotate(0deg) scale(0);
+                    opacity: 1;
+                }
+                50% {
+                    transform: translate(var(--x), calc(var(--y) - 50px)) rotate(360deg) scale(1.2);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translate(calc(var(--x) * 2), var(--y)) rotate(720deg) scale(0.8);
+                    opacity: 0;
+                }
+            }
+            
+            @keyframes particleFly {
+                0% {
+                    transform: translate(0, 0) scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translate(var(--px), var(--py)) scale(0);
+                    opacity: 0;
+                }
             }
         </style>
 
 
         <!-- 分割線 -->
         <div style="height: 2px; background: linear-gradient(90deg, transparent, #FFD700, transparent); margin: 40px 0;"></div>
-
-        <!-- 活動資訊區 -->
-        <section style="padding: 40px 0;">
-            <h2 style="text-align: center; color: #FFD700; font-size: 2rem; margin-bottom: 30px;">活動資訊</h2>
-            <div style="text-align: center;">
-                <img src="images/新会员.webp" alt="新會員優惠" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        
+        <!-- 圖片輪播區 -->
+        <section style="padding: 60px 20px; background: rgba(0, 0, 0, 0.5);">
+            <div class="carousel-container" style="max-width: 1200px; margin: 0 auto; position: relative;">
+                <div class="carousel-wrapper" style="overflow: hidden; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);">
+                    <div class="carousel-track" id="carouselTrack" style="display: flex; transition: transform 0.5s ease;">
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-06.webp" alt="展示圖1" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-40.webp" alt="展示圖2" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-43.webp" alt="展示圖3" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-46.webp" alt="展示圖4" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-48.webp" alt="展示圖5" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-50.webp" alt="展示圖6" style="width: 100%; height: auto; display: block;">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 輪播指示器 -->
+                <div class="carousel-indicators" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 10;">
+                    <span class="indicator active" onclick="goToSlide(0)" style="width: 12px; height: 12px; border-radius: 50%; background: #FFD700; cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="indicator" onclick="goToSlide(1)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="indicator" onclick="goToSlide(2)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="indicator" onclick="goToSlide(3)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="indicator" onclick="goToSlide(4)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="indicator" onclick="goToSlide(5)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                </div>
             </div>
         </section>
-
-        <!-- 續存優惠圖片 -->
-        <section style="text-align: center; padding: 40px 0;">
-            <img src="images/續存.webp" alt="續存最高再反100%" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-        </section>
-
+        
         <!-- 分割線 -->
         <div style="height: 2px; background: linear-gradient(90deg, transparent, #FFD700, transparent); margin: 40px 0;"></div>
 
@@ -1636,44 +1678,6 @@ src="https://www.facebook.com/tr?id=2730937257096183&ev=PageView&noscript=1"
                 </div>
             </div>
         </section>
-        
-        <!-- 圖片輪播區 -->
-        <section style="padding: 60px 20px; background: rgba(0, 0, 0, 0.5);">
-            <div class="carousel-container" style="max-width: 1200px; margin: 0 auto; position: relative;">
-                <div class="carousel-wrapper" style="overflow: hidden; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);">
-                    <div class="carousel-track" id="carouselTrack" style="display: flex; transition: transform 0.5s ease;">
-                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
-                            <img src="images/webp_out/photo_2025-09-07_19-44-06.webp" alt="展示圖1" style="width: 100%; height: auto; display: block;">
-                        </div>
-                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
-                            <img src="images/webp_out/photo_2025-09-07_19-44-40.webp" alt="展示圖2" style="width: 100%; height: auto; display: block;">
-                        </div>
-                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
-                            <img src="images/webp_out/photo_2025-09-07_19-44-43.webp" alt="展示圖3" style="width: 100%; height: auto; display: block;">
-                        </div>
-                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
-                            <img src="images/webp_out/photo_2025-09-07_19-44-46.webp" alt="展示圖4" style="width: 100%; height: auto; display: block;">
-                        </div>
-                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
-                            <img src="images/webp_out/photo_2025-09-07_19-44-48.webp" alt="展示圖5" style="width: 100%; height: auto; display: block;">
-                        </div>
-                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
-                            <img src="images/webp_out/photo_2025-09-07_19-44-50.webp" alt="展示圖6" style="width: 100%; height: auto; display: block;">
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 輪播指示器 -->
-                <div class="carousel-indicators" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 10;">
-                    <span class="indicator active" onclick="goToSlide(0)" style="width: 12px; height: 12px; border-radius: 50%; background: #FFD700; cursor: pointer; transition: all 0.3s;"></span>
-                    <span class="indicator" onclick="goToSlide(1)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
-                    <span class="indicator" onclick="goToSlide(2)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
-                    <span class="indicator" onclick="goToSlide(3)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
-                    <span class="indicator" onclick="goToSlide(4)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
-                    <span class="indicator" onclick="goToSlide(5)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
-                </div>
-            </div>
-        </section>
 
         <!-- 分割線 -->
         <div style="height: 2px; background: linear-gradient(90deg, transparent, #FFD700, transparent); margin: 40px 0;"></div>
@@ -1709,7 +1713,25 @@ src="https://www.facebook.com/tr?id=2730937257096183&ev=PageView&noscript=1"
         </footer>
     </div>
 
-    <!-- 浮動底部CTA條 -->
+    <!-- 右側浮動按鈕 -->
+    <div style="position: fixed; right: 20px; bottom: 80px; z-index: 1000;">
+        <button onclick="triggerGoldExplosion(event)" style="
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            transition: all 0.3s ease;
+            animation: pulse-gold 2s infinite;
+            position: relative;
+        " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+            <img src="images/按钮1.png" alt="立即註冊" style="width: 100px; height: auto;">
+        </button>
+    </div>
+    
+    <!-- 金幣爆炸效果容器 -->
+    <div id="explosionContainer" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000;"></div>
+
+    <!-- 底部浮動註冊條 -->
     <div style="position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(90deg, #FFD700, #FFA500); padding: 15px; text-align: center; z-index: 1000; box-shadow: 0 -5px 20px rgba(255, 215, 0, 0.5);">
         <a href="https://t.me/xin_165" target="_blank" style="color: #000; font-weight: bold; font-size: 1.1rem; text-decoration: none;">
             💬 聯繫代理万万
@@ -1719,7 +1741,8 @@ src="https://www.facebook.com/tr?id=2730937257096183&ev=PageView&noscript=1"
     <!-- 區域選擇彈窗 -->
     <div id="domainModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.9); z-index: 9999; align-items: center; justify-content: center;">
         <div style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a); border: 2px solid #FFD700; border-radius: 20px; padding: 30px; max-width: 500px; width: 90%; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);">
-            <h2 style="color: #FFD700; text-align: center; margin-bottom: 20px;">【註冊入口｜請選擇適合的網域】</h2>
+            <h2 style="color: #FFD700; text-align: center; margin-bottom: 10px;">註冊入口</h2>
+            <h3 style="color: #FFA500; text-align: center; margin-bottom: 25px;">【請選擇適合的網域】</h3>
             
             <div style="margin-bottom: 20px;">
                 <a href="https://97y.me/9jXKr" target="_blank" onclick="closeDomainModal()" style="display: block; background: rgba(255, 215, 0, 0.1); border: 2px solid #FFD700; border-radius: 10px; padding: 15px; margin-bottom: 15px; text-decoration: none; color: #fff; transition: all 0.3s;" onmouseover="this.style.background='rgba(255, 215, 0, 0.2)'" onmouseout="this.style.background='rgba(255, 215, 0, 0.1)'">
@@ -1740,8 +1763,8 @@ src="https://www.facebook.com/tr?id=2730937257096183&ev=PageView&noscript=1"
             
             <div style="background: rgba(255, 215, 0, 0.05); border-radius: 10px; padding: 15px; margin-bottom: 20px;">
                 <p style="color: #FFD700; margin: 5px 0;">📌 請確認網頁能正常開啟後再註冊</p>
-                <p style="color: #FFD700; margin: 5px 0;">📩 使用上異常歡迎找万万尋求協助</p>
-                <p style="color: #ccc; margin: 5px 0; font-size: 0.9rem;">(註冊好請通知万万以免錯過會員好禮)</p>
+                <p style="color: #FFD700; margin: 5px 0;">📩 使用上异常歡迎找万万寻求協助</p>
+                <p style="color: #ccc; margin: 5px 0; font-size: 0.9rem;">(註冊好告知万万以免錯過會員好禮)</p>
             </div>
             
             <button onclick="closeDomainModal()" style="width: 100%; background: linear-gradient(45deg, #FFD700, #FFA500); color: #000; border: none; padding: 12px; border-radius: 10px; font-weight: bold; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
@@ -1859,6 +1882,73 @@ src="https://www.facebook.com/tr?id=2730937257096183&ev=PageView&noscript=1"
         
         function autoPlayCarousel() {
             moveCarousel(1);
+        }
+        
+        // 金幣爆炸效果
+        function triggerGoldExplosion(event) {
+            const container = document.getElementById('explosionContainer');
+            const buttonRect = event.currentTarget.getBoundingClientRect();
+            const centerX = buttonRect.left + buttonRect.width / 2;
+            const centerY = buttonRect.top + buttonRect.height / 2;
+            
+            // 創建金幣
+            for (let i = 0; i < 12; i++) {
+                const coin = document.createElement('div');
+                coin.className = 'gold-coin';
+                
+                // 創建圖片元素
+                const img = document.createElement('img');
+                img.src = 'images/支付/USDT.webp';
+                img.alt = 'USDT';
+                coin.appendChild(img);
+                
+                // 隨機位置
+                const angle = (Math.PI * 2 * i) / 12;
+                const distance = 100 + Math.random() * 150;
+                const x = Math.cos(angle) * distance;
+                const y = Math.sin(angle) * distance;
+                
+                coin.style.setProperty('--x', x + 'px');
+                coin.style.setProperty('--y', y + 'px');
+                coin.style.left = (centerX - 25) + 'px'; // 調整位置以圖片中心對齊
+                coin.style.top = (centerY - 25) + 'px';
+                
+                container.appendChild(coin);
+                
+                // 自動移除
+                setTimeout(() => coin.remove(), 1500);
+            }
+            
+            // 創建金光粒子
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'gold-particle';
+                
+                // 隨機方向和距離
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 50 + Math.random() * 200;
+                const px = Math.cos(angle) * distance;
+                const py = Math.sin(angle) * distance;
+                
+                particle.style.setProperty('--px', px + 'px');
+                particle.style.setProperty('--py', py + 'px');
+                particle.style.left = centerX + 'px';
+                particle.style.top = centerY + 'px';
+                
+                container.appendChild(particle);
+                
+                // 自動移除
+                setTimeout(() => particle.remove(), 1000);
+            }
+            
+            // 播放音效（如果需要）
+            // const audio = new Audio('sound/coin.mp3');
+            // audio.play();
+            
+            // 延遲顯示彈窗，讓金幣效果先播放
+            setTimeout(() => {
+                showDomainModal();
+            }, 500);
         }
 
         // 頁面載入時初始化
