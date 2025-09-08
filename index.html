@@ -1350,6 +1350,44 @@ src="https://www.facebook.com/tr?id=2730937257096183&ev=PageView&noscript=1"
                 </div>
             </div>
         </section>
+        
+        <!-- 圖片輪播區 -->
+        <section style="padding: 60px 20px; background: rgba(0, 0, 0, 0.5);">
+            <div class="carousel-container" style="max-width: 1200px; margin: 0 auto; position: relative;">
+                <div class="carousel-wrapper" style="overflow: hidden; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);">
+                    <div class="carousel-track" id="carouselTrack" style="display: flex; transition: transform 0.5s ease;">
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-06.webp" alt="展示圖1" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-40.webp" alt="展示圖2" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-43.webp" alt="展示圖3" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-46.webp" alt="展示圖4" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-48.webp" alt="展示圖5" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-50.webp" alt="展示圖6" style="width: 100%; height: auto; display: block;">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 輪播指示器 -->
+                <div class="carousel-indicators" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 10;">
+                    <span class="indicator active" onclick="goToSlide(0)" style="width: 12px; height: 12px; border-radius: 50%; background: #FFD700; cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="indicator" onclick="goToSlide(1)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="indicator" onclick="goToSlide(2)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="indicator" onclick="goToSlide(3)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="indicator" onclick="goToSlide(4)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="indicator" onclick="goToSlide(5)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                </div>
+            </div>
+        </section>
 
         <!-- APP展示區域（完全複製原版） -->
         <style>
@@ -1558,47 +1596,6 @@ src="https://www.facebook.com/tr?id=2730937257096183&ev=PageView&noscript=1"
         </style>
 
 
-        <!-- 分割線 -->
-        <div style="height: 2px; background: linear-gradient(90deg, transparent, #FFD700, transparent); margin: 40px 0;"></div>
-        
-        <!-- 圖片輪播區 -->
-        <section style="padding: 60px 20px; background: rgba(0, 0, 0, 0.5);">
-            <div class="carousel-container" style="max-width: 1200px; margin: 0 auto; position: relative;">
-                <div class="carousel-wrapper" style="overflow: hidden; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);">
-                    <div class="carousel-track" id="carouselTrack" style="display: flex; transition: transform 0.5s ease;">
-                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
-                            <img src="images/webp_out/photo_2025-09-07_19-44-06.webp" alt="展示圖1" style="width: 100%; height: auto; display: block;">
-                        </div>
-                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
-                            <img src="images/webp_out/photo_2025-09-07_19-44-40.webp" alt="展示圖2" style="width: 100%; height: auto; display: block;">
-                        </div>
-                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
-                            <img src="images/webp_out/photo_2025-09-07_19-44-43.webp" alt="展示圖3" style="width: 100%; height: auto; display: block;">
-                        </div>
-                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
-                            <img src="images/webp_out/photo_2025-09-07_19-44-46.webp" alt="展示圖4" style="width: 100%; height: auto; display: block;">
-                        </div>
-                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
-                            <img src="images/webp_out/photo_2025-09-07_19-44-48.webp" alt="展示圖5" style="width: 100%; height: auto; display: block;">
-                        </div>
-                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
-                            <img src="images/webp_out/photo_2025-09-07_19-44-50.webp" alt="展示圖6" style="width: 100%; height: auto; display: block;">
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 輪播指示器 -->
-                <div class="carousel-indicators" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 10;">
-                    <span class="indicator active" onclick="goToSlide(0)" style="width: 12px; height: 12px; border-radius: 50%; background: #FFD700; cursor: pointer; transition: all 0.3s;"></span>
-                    <span class="indicator" onclick="goToSlide(1)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
-                    <span class="indicator" onclick="goToSlide(2)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
-                    <span class="indicator" onclick="goToSlide(3)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
-                    <span class="indicator" onclick="goToSlide(4)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
-                    <span class="indicator" onclick="goToSlide(5)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
-                </div>
-            </div>
-        </section>
-        
         <!-- 分割線 -->
         <div style="height: 2px; background: linear-gradient(90deg, transparent, #FFD700, transparent); margin: 40px 0;"></div>
 
