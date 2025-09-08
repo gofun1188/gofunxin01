@@ -29,13 +29,19 @@ src="https://www.facebook.com/tr?id=2730937257096183&ev=PageView&noscript=1"
             box-sizing: border-box;
         }
 
+        html {
+            background: #000000;
+        }
+
         body {
             font-family: 'Microsoft JhengHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #1a1a1a 100%);
+            background-attachment: fixed;
             color: #ffffff;
             overflow-x: hidden;
             position: relative;
             padding-bottom: 120px;
+            min-height: 100vh;
         }
 
         /* ===== 修改：頂部快速註冊條 ===== */
@@ -1356,6 +1362,13 @@ src="https://www.facebook.com/tr?id=2730937257096183&ev=PageView&noscript=1"
             }
             
             @media (max-width: 768px) {
+                /* 確保移動端背景不變白 */
+                html, body {
+                    background-color: #000000 !important;
+                    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #1a1a1a 100%) !important;
+                    background-attachment: fixed !important;
+                }
+                
                 .app-showcase {
                     flex-direction: column;
                     gap: 50px;
@@ -1365,11 +1378,28 @@ src="https://www.facebook.com/tr?id=2730937257096183&ev=PageView&noscript=1"
                 .phone-image {
                     width: 320px !important;
                 }
+                
+                /* 確保容器背景透明 */
+                .container, section {
+                    background: transparent !important;
+                }
             }
             
             @media (max-width: 480px) {
+                /* 確保小屏幕背景不變白 */
+                html, body {
+                    background-color: #000000 !important;
+                    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #1a1a1a 100%) !important;
+                    background-attachment: fixed !important;
+                }
+                
                 .phone-image {
                     width: 280px !important;
+                }
+                
+                /* 確保容器背景透明 */
+                .container, section {
+                    background: transparent !important;
                 }
             }
 
