@@ -1324,8 +1324,8 @@ src="https://www.facebook.com/tr?id=2730937257096183&ev=PageView&noscript=1"
     <div class="container">
         <!-- 新增：標題和副標題區域 -->
         <section class="hero-section" style="text-align: center; padding: 40px 0;">
-            <img src="images/标题1.webp" alt="百富標題" style="max-width: 100%; height: auto; margin-bottom: 20px;">
-            <img src="images/九月會員最高反水1.4%.webp" alt="九月會員最高反水1.4%" style="max-width: 80%; height: auto;">
+            <img src="images/标题1.webp" alt="標題" style="max-width: 100%; height: auto; margin-bottom: 20px;">
+            <img src="images/1.4%.webp" alt="九月會員最高反水1.4%" style="max-width: 80%; height: auto;">
         </section>
 
         <!-- YouTube影片區域 -->
@@ -1344,40 +1344,171 @@ src="https://www.facebook.com/tr?id=2730937257096183&ev=PageView&noscript=1"
             </div>
         </section>
 
-        <!-- CTA按鈕區域 -->
-        <section class="cta-buttons-section" style="padding: 30px 0; text-align: center;">
-            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+        <!-- APP展示區域（完全複製原版） -->
+        <style>
+            .app-showcase {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 80px auto;
+                gap: 80px;
+                max-width: 800px;
+            }
+            
+            @media (max-width: 768px) {
+                .app-showcase {
+                    flex-direction: column;
+                    gap: 50px;
+                    margin: 60px auto;
+                }
+                
+                .phone-image {
+                    width: 320px !important;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .phone-image {
+                    width: 280px !important;
+                }
+            }
+
+            .phone-container {
+                position: relative;
+                z-index: 10;
+            }
+
+            .phone-glow {
+                position: absolute;
+                top: -30px;
+                left: -30px;
+                right: -30px;
+                bottom: -30px;
+                background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.4) 0%, transparent 70%);
+                border-radius: 50%;
+                animation: phone-pulse 3s ease-in-out infinite;
+                z-index: -1;
+            }
+
+            @keyframes phone-pulse {
+                0%, 100% { opacity: 0.6; transform: scale(1); }
+                50% { opacity: 1; transform: scale(1.2); }
+            }
+
+            .phone-image {
+                width: 350px;
+                height: auto;
+                filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5));
+                animation: phone-float 4s ease-in-out infinite;
+                position: relative;
+                z-index: 20;
+            }
+
+            @keyframes phone-float {
+                0%, 100% { transform: translateY(0px) rotate(0deg); }
+                50% { transform: translateY(-20px) rotate(2deg); }
+            }
+
+            .phone-screen-content {
+                position: absolute;
+                top: 0%;
+                left: -20%;
+                width: 84%;
+                height: 88%;
+                border-radius: 35px;
+                overflow: hidden;
+                z-index: 5;
+            }
+
+            .phone-model-carousel {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .phone-model-carousel img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                flex-shrink: 0;
+                filter: brightness(1.1) contrast(1.1);
+            }
+
+            .app-features {
+                max-width: 500px;
+            }
+
+            .feature-title {
+                font-size: 2.8rem;
+                font-weight: 700;
+                background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #ffffff 100%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 40px;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                text-align: center;
+                position: relative;
+            }
+        </style>
+
+        <section class="app-showcase">
+            <div class="phone-container">
+                <div class="phone-glow"></div>
+                <img src="images/1_phone-1.webp" alt="手機展示" class="phone-image">
+                <div class="phone-screen-content">
+                    <div class="phone-model-carousel" id="phoneModelCarousel">
+                        <!-- 美女圖片會由JavaScript動態載入 -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 按鈕區域 -->
+            <div style="display: flex; flex-direction: column; gap: 20px; justify-content: center; align-items: center;">
                 <button onclick="showDomainModal()" style="
                     background: linear-gradient(45deg, #FFD700, #FFA500);
                     color: #000;
                     border: none;
-                    padding: 18px 40px;
+                    padding: 16px 50px;
                     font-size: 1.2rem;
                     font-weight: bold;
                     border-radius: 50px;
                     cursor: pointer;
-                    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5);
+                    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
                     transition: all 0.3s ease;
-                " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    white-space: nowrap;
+                    animation: pulse-gold 2s infinite;
+                " onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
                     立即註冊
                 </button>
                 <a href="https://t.me/xin_165" target="_blank" style="
                     background: linear-gradient(45deg, #0088cc, #00a8e8);
                     color: #fff;
                     border: none;
-                    padding: 18px 40px;
+                    padding: 16px 50px;
                     font-size: 1.2rem;
                     font-weight: bold;
                     border-radius: 50px;
                     text-decoration: none;
                     display: inline-block;
-                    box-shadow: 0 5px 20px rgba(0, 136, 204, 0.5);
+                    box-shadow: 0 8px 25px rgba(0, 136, 204, 0.6);
                     transition: all 0.3s ease;
-                " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    white-space: nowrap;
+                " onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
                     聊天聯繫代理(万万)
                 </a>
             </div>
         </section>
+
+        <style>
+            @keyframes pulse-gold {
+                0%, 100% { box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6); }
+                50% { box-shadow: 0 8px 35px rgba(255, 215, 0, 0.9); }
+            }
+        </style>
+
 
         <!-- 分割線 -->
         <div style="height: 2px; background: linear-gradient(90deg, transparent, #FFD700, transparent); margin: 40px 0;"></div>
@@ -1411,7 +1542,7 @@ src="https://www.facebook.com/tr?id=2730937257096183&ev=PageView&noscript=1"
 
         <!-- 續存優惠圖片 -->
         <section style="text-align: center; padding: 40px 0;">
-            <img src="images/續存最高在反100%.webp" alt="續存最高再反100%" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <img src="images/續存.webp" alt="續存最高再反100%" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
         </section>
 
         <!-- 分割線 -->
@@ -1582,6 +1713,42 @@ src="https://www.facebook.com/tr?id=2730937257096183&ev=PageView&noscript=1"
             modal.style.display = 'none';
         }
 
+        // 創建手機內美女輪播
+        function createPhoneModelGallery() {
+            const phoneModelCarousel = document.getElementById('phoneModelCarousel');
+            if (!phoneModelCarousel) return;
+            
+            const imageFiles = [
+                'images/mt/ah48n-4ldpx.webp',
+                'images/mt/amhji-uv5bp.webp',
+                'images/mt/aqjgq-s2whp.webp'
+            ];
+
+            imageFiles.forEach((src, index) => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = `美女主播 ${index + 1}`;
+                img.loading = 'lazy';
+                phoneModelCarousel.appendChild(img);
+            });
+        }
+
+        // 手機內美女輪播控制
+        let phoneModelCurrentSlide = 0;
+        const phoneModelTotalSlides = 3;
+
+        function showPhoneModelSlide(index) {
+            const phoneModelCarousel = document.getElementById('phoneModelCarousel');
+            if (!phoneModelCarousel) return;
+            phoneModelCurrentSlide = index;
+            phoneModelCarousel.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        function nextPhoneModelSlide() {
+            phoneModelCurrentSlide = (phoneModelCurrentSlide + 1) % phoneModelTotalSlides;
+            showPhoneModelSlide(phoneModelCurrentSlide);
+        }
+
         // 創建金色浮動粒子效果
         function createParticles() {
             const bgAnimation = document.getElementById('bgAnimation');
@@ -1603,6 +1770,10 @@ src="https://www.facebook.com/tr?id=2730937257096183&ev=PageView&noscript=1"
         // 頁面載入時初始化
         document.addEventListener('DOMContentLoaded', function() {
             createParticles();
+            createPhoneModelGallery();
+            
+            // 每2.5秒自動切換手機內美女圖片
+            setInterval(nextPhoneModelSlide, 2500);
             
             // 設置 Facebook Pixel 追蹤
             if (typeof fbq !== 'undefined') {
