@@ -114,7 +114,7 @@ src="https://www.facebook.com/tr?id=2730937257096183&ev=PageView&noscript=1"
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: -1;
+            z-index: 1;
         }
 
         .particle {
@@ -122,7 +122,8 @@ src="https://www.facebook.com/tr?id=2730937257096183&ev=PageView&noscript=1"
             background: radial-gradient(circle, #FFD700 0%, #FFA500 50%, transparent 100%);
             border-radius: 50%;
             animation: float 8s ease-in-out infinite;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.9), 0 0 30px rgba(255, 215, 0, 0.6);
+            filter: blur(0.5px);
         }
 
         @keyframes float {
@@ -1544,29 +1545,10 @@ src="https://www.facebook.com/tr?id=2730937257096183&ev=PageView&noscript=1"
         <div style="height: 2px; background: linear-gradient(90deg, transparent, #FFD700, transparent); margin: 40px 0;"></div>
 
         <!-- 活動資訊區 -->
-        <section class="promotion-section" style="padding: 40px 20px; background: rgba(255, 215, 0, 0.05); border-radius: 20px; margin: 40px 0;">
+        <section style="padding: 40px 0;">
             <h2 style="text-align: center; color: #FFD700; font-size: 2rem; margin-bottom: 30px;">活動資訊</h2>
-            <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap;">
-                <!-- 不限館別 -->
-                <div style="flex: 1; min-width: 300px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 15px; padding: 25px;">
-                    <h3 style="color: #FFD700; text-align: center; margin-bottom: 20px; font-size: 1.5rem;">不限館別</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin: 15px 0; font-size: 1.1rem;">• 首存 ≥ 200 送 <span style="color: #FFD700; font-weight: bold;">98</span></li>
-                        <li style="margin: 15px 0; font-size: 1.1rem;">• 首存 ≥ 500 送 <span style="color: #FFD700; font-weight: bold;">268</span></li>
-                        <li style="margin: 15px 0; font-size: 1.1rem;">• 首存 ≥ 1000 送 <span style="color: #FFD700; font-weight: bold;">388</span></li>
-                        <li style="margin: 15px 0; font-size: 1.1rem;">• 首存 ≥ 2500 送 <span style="color: #FFD700; font-weight: bold;">888</span></li>
-                    </ul>
-                </div>
-                <!-- 限電子 -->
-                <div style="flex: 1; min-width: 300px; background: rgba(0, 0, 0, 0.6); border: 2px solid #FFA500; border-radius: 15px; padding: 25px;">
-                    <h3 style="color: #FFA500; text-align: center; margin-bottom: 20px; font-size: 1.5rem;">限電子</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin: 15px 0; font-size: 1.1rem;">• 首存 ≥ 200 送 <span style="color: #FFA500; font-weight: bold;">108</span></li>
-                        <li style="margin: 15px 0; font-size: 1.1rem;">• 首存 ≥ 500 送 <span style="color: #FFA500; font-weight: bold;">208</span></li>
-                        <li style="margin: 15px 0; font-size: 1.1rem;">• 首存 ≥ 1000 送 <span style="color: #FFA500; font-weight: bold;">358</span></li>
-                        <li style="margin: 15px 0; font-size: 1.1rem;">• 首存 ≥ 2500 送 <span style="color: #FFA500; font-weight: bold;">1058</span></li>
-                    </ul>
-                </div>
+            <div style="text-align: center;">
+                <img src="images/新会员.webp" alt="新會員優惠" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
             </div>
         </section>
 
@@ -1651,6 +1633,44 @@ src="https://www.facebook.com/tr?id=2730937257096183&ev=PageView&noscript=1"
                     </div>
                     <h3 style="color: #FFD700; margin-bottom: 10px;">多幣種支付</h3>
                     <p style="color: #ccc; line-height: 1.6;">USDT、Apple Pay、信用卡，多國法幣通道全支援。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 圖片輪播區 -->
+        <section style="padding: 60px 20px; background: rgba(0, 0, 0, 0.5);">
+            <div class="carousel-container" style="max-width: 1200px; margin: 0 auto; position: relative;">
+                <div class="carousel-wrapper" style="overflow: hidden; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);">
+                    <div class="carousel-track" id="carouselTrack" style="display: flex; transition: transform 0.5s ease;">
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-06.webp" alt="展示圖1" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-40.webp" alt="展示圖2" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-43.webp" alt="展示圖3" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-46.webp" alt="展示圖4" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-48.webp" alt="展示圖5" style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <div class="carousel-slide" style="min-width: 100%; position: relative;">
+                            <img src="images/webp_out/photo_2025-09-07_19-44-50.webp" alt="展示圖6" style="width: 100%; height: auto; display: block;">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 輪播指示器 -->
+                <div class="carousel-indicators" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 10;">
+                    <span class="indicator active" onclick="goToSlide(0)" style="width: 12px; height: 12px; border-radius: 50%; background: #FFD700; cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="indicator" onclick="goToSlide(1)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="indicator" onclick="goToSlide(2)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="indicator" onclick="goToSlide(3)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="indicator" onclick="goToSlide(4)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="indicator" onclick="goToSlide(5)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 215, 0, 0.3); cursor: pointer; transition: all 0.3s;"></span>
                 </div>
             </div>
         </section>
@@ -1782,19 +1802,63 @@ src="https://www.facebook.com/tr?id=2730937257096183&ev=PageView&noscript=1"
         // 創建金色浮動粒子效果
         function createParticles() {
             const bgAnimation = document.getElementById('bgAnimation');
-            const particleCount = window.innerWidth < 768 ? 20 : 40;
+            if (!bgAnimation) {
+                console.error('Background animation container not found');
+                return;
+            }
+            
+            // 清除舊的粒子
+            bgAnimation.innerHTML = '';
+            
+            const particleCount = window.innerWidth < 768 ? 25 : 50;
 
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
                 particle.style.left = Math.random() * 100 + '%';
                 particle.style.top = Math.random() * 100 + '%';
-                particle.style.width = Math.random() * 6 + 3 + 'px';
-                particle.style.height = particle.style.width;
+                const size = Math.random() * 8 + 4;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
                 particle.style.animationDelay = Math.random() * 8 + 's';
-                particle.style.animationDuration = (Math.random() * 6 + 6) + 's';
+                particle.style.animationDuration = (Math.random() * 6 + 8) + 's';
                 bgAnimation.appendChild(particle);
             }
+        }
+        
+        // 新輪播圖控制
+        let currentCarouselSlide = 0;
+        const totalCarouselSlides = 6;
+        
+        function moveCarousel(direction) {
+            currentCarouselSlide = (currentCarouselSlide + direction + totalCarouselSlides) % totalCarouselSlides;
+            updateCarousel();
+        }
+        
+        function goToSlide(index) {
+            currentCarouselSlide = index;
+            updateCarousel();
+        }
+        
+        function updateCarousel() {
+            const track = document.getElementById('carouselTrack');
+            if (track) {
+                track.style.transform = `translateX(-${currentCarouselSlide * 100}%)`;
+                
+                // 更新指示器
+                const indicators = document.querySelectorAll('.carousel-indicators .indicator');
+                indicators.forEach((indicator, index) => {
+                    if (index === currentCarouselSlide) {
+                        indicator.style.background = '#FFD700';
+                    } else {
+                        indicator.style.background = 'rgba(255, 215, 0, 0.3)';
+                    }
+                });
+            }
+        }
+        
+        function autoPlayCarousel() {
+            moveCarousel(1);
         }
 
         // 頁面載入時初始化
@@ -1804,6 +1868,9 @@ src="https://www.facebook.com/tr?id=2730937257096183&ev=PageView&noscript=1"
             
             // 每2.5秒自動切換手機內美女圖片
             setInterval(nextPhoneModelSlide, 2500);
+            
+            // 每3秒自動切換新輪播圖
+            setInterval(autoPlayCarousel, 3000);
             
             // 設置 Facebook Pixel 追蹤
             if (typeof fbq !== 'undefined') {
