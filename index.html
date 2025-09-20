@@ -1331,8 +1331,12 @@ src="https://www.facebook.com/tr?id=733026073038121&ev=PageView&noscript=1"
     <div class="container">
         <!-- 新增：標題和副標題區域 -->
         <section class="hero-section" style="text-align: center; padding: 40px 0;">
-            <img src="images/标题1.webp" alt="標題" style="max-width: 100%; height: auto; margin-bottom: 20px;">
-            <img src="images/反水.webp" alt="九月會員最高反水1.4%" style="max-width: 80%; height: auto;">
+            <a href="https://t.me/xin_165" target="_blank" style="display: inline-block; cursor: pointer;">
+                <img src="images/标题1.webp" alt="標題" style="max-width: 100%; height: auto; margin-bottom: 20px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            </a>
+            <a href="https://t.me/xin_165" target="_blank" style="display: inline-block; cursor: pointer;">
+                <img src="images/反水.webp" alt="九月會員最高反水1.4%" style="max-width: 80%; height: auto; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            </a>
         </section>
 
         <!-- YouTube影片區域 -->
@@ -1526,13 +1530,22 @@ src="https://www.facebook.com/tr?id=733026073038121&ev=PageView&noscript=1"
         <section class="app-showcase">
             <div class="phone-container">
                 <div class="phone-glow"></div>
-                <img src="images/1_phone-1.webp" alt="手機展示" class="phone-image">
+                <a href="https://t.me/xin_165" target="_blank" style="display: inline-block;">
+                    <img src="images/1_phone-1.webp" alt="手機展示" class="phone-image">
+                </a>
                 <div class="phone-screen-content">
                     <div class="phone-model-carousel" id="phoneModelCarousel">
                         <!-- 美女圖片會由JavaScript動態載入 -->
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- 萬萬圖片區域 -->
+        <section style="padding: 0 20px 40px 20px; text-align: center; margin-top: -100px; position: relative; z-index: 30;">
+            <a href="https://t.me/xin_165" target="_blank" style="display: inline-block; cursor: pointer;">
+                <img src="images/萬萬.png" alt="萬萬" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 15px 40px rgba(255, 215, 0, 0.5)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 10px 30px rgba(255, 215, 0, 0.3)'">
+            </a>
         </section>
 
         <style>
@@ -1799,6 +1812,10 @@ src="https://www.facebook.com/tr?id=733026073038121&ev=PageView&noscript=1"
                 img.src = src;
                 img.alt = `美女主播 ${index + 1}`;
                 img.loading = 'lazy';
+                img.style.cursor = 'pointer';
+                img.onclick = function() {
+                    window.open('https://t.me/xin_165', '_blank');
+                };
                 phoneModelCarousel.appendChild(img);
             });
         }
